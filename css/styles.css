@@ -1,0 +1,26 @@
+body{
+    background-color: #8FD4FA;
+    color: darkblue;
+}
+
+header{
+    background-color: green;
+}
+
+p{
+    font-size: 20pt;
+}
+
+img{
+    width: 50%;
+    height: 50%;
+}
+
+#eslogan{
+    color: red;
+    font-size: 30pt;
+}
+
+.parrafo {
+    background-color: darkviolet;
+}
