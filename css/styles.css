@@ -1,9 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header {
     position: sticky;
     top: 0;                  /* Se pega exactamente al borde superior */
     z-index: 1000;           /* Asegura que siempre quede POR ENCIMA de todo el contenido */
     background-color: #ffffff; /* Obligatorio: evita que sea transparente al pasar sobre textos/fotos */
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: sombra suave para separarlo del fondo */
     display: flex;                /* Pone el logo y el nav en la misma fila */
     justify-content: space-between; /* Manda el logo a la izquierda y el nav a la derecha */
     align-items: center;          /* Los centra verticalmente entre sí (usa flex-start si lo quieres pegado arriba) */
@@ -29,6 +34,14 @@ nav a {
     font-weight: bold;
     font-family: sans-serif;
     font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+/* Efecto cuando el usuario pasa el cursor encima */
+nav a:hover {
+    color: #158278; /* Un tono más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Se eleva ligeramente */
 }
 
 img{
@@ -36,16 +49,156 @@ img{
     height: 50%;
 }
 
+#inicio{
+    background-image: url("../img/principal.jpg");
+    /* 2. Ajuste para que cubra todo el section sin repetirse */
+    background-size: cover;
+    background-position: 50% 20%;
+    background-repeat: no-repeat;
+    /* 3. Altura mínima para que se vea aunque haya poco texto */
+    min-height: 350px; /* También puedes probar con 550px o 650px */
+    /* 4. Opcional: centra o acomoda el texto adentro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+.caja {
+    margin: 78px;
+    border-radius: 17px;
+    padding: 36px 2px 25px 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+.text-h1 {
+    font-size: 40px;
+    white-space: pre-line;
+    color: white;
+    font-family: sans-serif;
+}
+#eslogan {
+    font-size: 26px;
+    font-weight: 100;
+    font-family: inherit;
+    white-space: pre-wrap;
+    color: white;
+    font-family: sans-serif;
+}
+.btn-paseo {
+    /* 1. Permite aplicar padding y márgenes correctamente si es una etiqueta <a> */
+    display: inline-block;
+    /* 2. Tamaño y espacio interno (arriba/abajo | izquierda/derecha) */
+    padding: 12px 28px;
+    margin-top: 20px;
+    /* 3. Colores (usando tonos de tu logo Huella Urbana) */
+    background-color: #1ca69a; /* Verde turquesa del logo */
+    color: #000;            /* Texto blanco */
+    /* 4. Tipografía y bordes */
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;     /* Quita el subrayado azul del enlace */
+    border: none;              /* Quita el borde gris si usas <button> */
+    border-radius: 8px;        /* Esquinas redondeadas (usa 50px si lo quieres tipo píldora) */
+    cursor: pointer;
+    /* 5. Animación suave al pasar el mouse */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    }
 
-/* p{
-    font-size: 20pt;
+/* Efecto cuando el usuario pasa el cursor encima */
+.btn-paseo:hover {
+    background-color: #158278; /* Un tono más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Se eleva ligeramente */
+    color: #ffffff
 }
 
-#eslogan{
-    color: red;
-    font-size: 30pt;
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 17px 17px;
+    background-color: #f8f9fa;
+    text-align: center;
+    font-family: sans-serif;
 }
 
-.parrafo {
-    background-color: darkviolet;
-} */
+/* Hace que el título ocupe toda la fila superior y no robe una columna */
+.servicios h2 {
+    grid-column: 1 / -1;
+    margin-bottom: -5px;
+    color: #1a2b49;
+    font-family: sans-serif;
+    font-size: 35px;
+}
+
+.caja_servicio_uno {
+    background-image: url(../img/paseo-individual.jpg);
+    background-color: #ffffff;
+    padding: 25px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 4px solid #1ca69a;
+    font-family: sans-serif;
+    background-size: cover;
+    background-position: 40% 70%;
+    background-repeat: no-repeat;
+    min-height: 300px; /* También puedes probar con 550px o 650px */
+    /* 4. Opcional: centra o acomoda el texto adentro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+.caja_servicio_dos {
+    background-image: url(../img/paseo-grupal.jpg);
+    background-color: #ffffff;
+    padding: 25px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 4px solid #1ca69a;
+    font-family: sans-serif;
+    background-size: cover;
+    background-position: 40% 70%;
+    background-repeat: no-repeat;
+    min-height: 300px; /* También puedes probar con 550px o 650px */
+    /* 4. Opcional: centra o acomoda el texto adentro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+.caja_servicio_tres {
+    background-image: url(../img/guarderia.jpg);
+    background-color: #ffffff;
+    padding: 25px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 4px solid #1ca69a;
+    font-family: sans-serif;
+    background-size: cover;
+    background-position: 40% 70%;
+    background-repeat: no-repeat;
+    min-height: 300px; /* También puedes probar con 550px o 650px */
+    /* 4. Opcional: centra o acomoda el texto adentro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+@media (max-width: 768px) {
+    .servicios {
+        grid-template-columns: 1fr;
+    }
+}
+
+.caja_servicios_fondo {
+    margin: 78px;
+    border-radius: 17px;
+    padding: 36px 2px 25px 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
