@@ -1,19 +1,44 @@
-body{
-    background-color: #8FD4FA;
-    color: darkblue;
+header {
+    position: sticky;
+    top: 0;                  /* Se pega exactamente al borde superior */
+    z-index: 1000;           /* Asegura que siempre quede POR ENCIMA de todo el contenido */
+    background-color: #ffffff; /* Obligatorio: evita que sea transparente al pasar sobre textos/fotos */
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: sombra suave para separarlo del fondo */
+    display: flex;                /* Pone el logo y el nav en la misma fila */
+    justify-content: space-between; /* Manda el logo a la izquierda y el nav a la derecha */
+    align-items: center;          /* Los centra verticalmente entre sí (usa flex-start si lo quieres pegado arriba) */
+    padding: 0px 30px;           /* Espacio interno alrededor del encabezado */
 }
 
-header{
-    background-color: green;
+header img{
+    height: 100px; /* Prueba con 50px, 60px o 70px según qué tan delgado lo quieras */
+    width: auto;  /* Mantiene la proporción del logo sin deformarlo */
 }
 
-p{
-    font-size: 20pt;
+nav ul {
+    display: flex;                /* Pone los enlaces (Inicio, Servicios...) en horizontal */
+    list-style: none;             /* Quita los puntos negros de la lista */
+    gap: 30px;                    /* Espacio entre cada enlace */
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;        /* Quita el subrayado azul de los enlaces */
+    color: #000;               /* Color azul oscuro a juego con tu logo */
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 18px;
 }
 
 img{
     width: 50%;
     height: 50%;
+}
+
+
+/* p{
+    font-size: 20pt;
 }
 
 #eslogan{
@@ -23,4 +48,4 @@ img{
 
 .parrafo {
     background-color: darkviolet;
-}
+} */
